@@ -1,8 +1,11 @@
 # VanLucentX | Tri-Modal Health Diagnostic AI
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-VanLucentX-00C7B7?style=for-the-badge)](https://vanlucentx.vercel.app/)
-[![Frontend Tech](https://img.shields.io/badge/Frontend-React_|_Tailwind_|_Framer-282C34?style=for-the-badge&logo=react)](#)
-[![ML Architecture](https://img.shields.io/badge/AI_Engine-DenseNet121_|_XGBoost-FF6F00?style=for-the-badge&logo=tensorflow)](#)
+<p align="left">
+  <a href="https://vanlucentx.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-VanLucentX-00C7B7?style=for-the-badge&labelColor=1e293b&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+  <img src="https://img.shields.io/badge/Frontend-Next.js_|_Tailwind-0ea5e9?style=for-the-badge&labelColor=1e293b&logo=react&logoColor=white" alt="Frontend Tech" />
+  <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&labelColor=1e293b&logo=fastapi&logoColor=white" alt="Backend Tech" />
+  <img src="https://img.shields.io/badge/AI_Engine-DenseNet_|_XGBoost-f97316?style=for-the-badge&labelColor=1e293b&logo=tensorflow&logoColor=white" alt="ML Architecture" />
+</p>
 
 > **Note on Repository Status:** This repository serves as the public-facing showcase and frontend architecture overview for the VanLucentX platform. The core machine learning inference engine, neural network weights, and proprietary data pipelines are maintained in a separate, private repository to protect the intellectual property of the diagnostic algorithms.
 
@@ -17,7 +20,7 @@ Detecting pulmonary infiltration from standard radiography is historically chall
 **VanLucentX** is an enterprise-grade, "Tri-Modal" AI health screening system designed to fix this isolated approach. It acts as a comprehensive digital diagnostic assistant by fusing three distinct streams of patient data into a single predictive pipeline. By synthesizing visual, historical, and physiological data, the system dramatically reduces false positives and mirrors the holistic diagnostic approach of a human physician.
 
 ### 🔍 Transparent AI: The Grad-CAM Integration
-In clinical environments, "black-box" AI is insufficient; physicians must understand *why* a model reached its conclusion. VanLucentX implements **Visual Explainability via Grad-CAM (Gradient-weighted Class Activation Mapping)**. During inference, the system generates a color-coded attention heatmap overlaid directly onto the patient's radiograph, highlighting the exact anatomical regions and opacities that drove the neural network's prediction.
+In clinical environments,VanLucentX implements **Visual Explainability via Grad-CAM (Gradient-weighted Class Activation Mapping)**. During inference, the system generates a color-coded attention heatmap overlaid directly onto the patient's radiograph, highlighting the exact anatomical regions and opacities that drove the neural network's prediction.
 
 ---
 
@@ -55,7 +58,39 @@ The deployed application represents a modern, high-performance medical UI design
 * **Motion & Interactions:** Framer Motion (Implementing glassmorphism, staggered structural reveals, and simulated scanning states)
 * **Hosting:** Vercel Global Edge Network for millisecond latency
 
+## ⚙️ Backend Architecture & Inference API (Private Repo)
+The Next.js frontend securely communicates with a standalone, high-performance backend. Built for speed and scalability, this API layer handles the heavy computational lifting of the ML models and image processing.
+
+* **API Framework:** `FastAPI` (Asynchronous Python) for lightning-fast request handling and strict type validation via Pydantic.
+* **Server Orchestration:** `Uvicorn` (ASGI web server) ensuring concurrent handling of medical data payloads.
+* **Data Transformation:** Seamlessly converts incoming HTTP requests (images, JSON vitals) into structured `NumPy` tensors and `Pandas` DataFrames required by the inference engine.
+* **Inference Endpoints:** Exposes secure REST endpoints (e.g., `POST /api/v1/predict`) that process the tri-modal data and return the Meta-Learner confidence scores alongside base64-encoded Grad-CAM heatmaps in milliseconds.
+
 ---
+## 📊 Clinical Metrics & Model Performance
+The ensemble model was rigorously tested to prioritize diagnostic safety (maximizing True Positives while minimizing False Negatives). Below are the evaluation metrics derived from the validation threshold testing:
+
+| Metric | Score | Clinical Significance |
+| :--- | :--- | :--- |
+| **Sensitivity (Recall)** | `[XX.X%]` | Ability to correctly identify true positive infiltration cases. |
+| **Specificity** | `[XX.X%]` | Ability to correctly identify healthy (normal) scans. |
+| **False Positive Rate (FPR)**| `[XX.X%]` | Percentage of healthy patients incorrectly flagged. |
+| **ROC-AUC** | `[0.XX]` | Overall diagnostic capability of the Meta-Learner. |
+
+*(Validation matrix: TP: `[XX]` | TN: `[XX]` | FP: `[XX]` | FN: `[XX]`)*
+
+--
+## 📊 Clinical Metrics & Model Performance
+The ensemble model was rigorously tested to prioritize diagnostic safety (maximizing True Positives while minimizing False Negatives). Below are the evaluation metrics derived from the validation threshold testing (Meta-Learner at Optimal Youden's J Threshold = 0.374):
+
+| Metric | Score | Clinical Significance |
+| :--- | :--- | :--- |
+| **Sensitivity (Recall)** | `99.8%` | Ability to correctly identify true positive infiltration cases. |
+| **Specificity** | `84.9%` | Ability to correctly identify healthy (normal) scans. |
+| **False Positive Rate (FPR)**| `15.1%` | Percentage of healthy patients incorrectly flagged. |
+| **ROC-AUC** | `~0.95` | Overall diagnostic capability of the Meta-Learner. |
+
+*(Validation matrix: TP: `530` | TN: `2097` | FP: `372` | FN: `1`)*
 
 ## 👨‍💻 Developer & Architect
 
