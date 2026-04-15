@@ -59,11 +59,10 @@ The deployed application represents a modern, high-performance medical UI design
 
 ## 👨‍💻 Developer & Architect
 
-**Aryan Vaghasiya** | *Data & AI*
+**Aryan Vaghasiya**
 
 Specializing in building robust, heavily regularized machine learning pipelines and intelligent diagnostic systems. Drawing from professional experience engineering advanced data solutions, including enterprise analytics and AI language services, the focus remains on the intersection of deep neural networks, interpretable AI, and scalable cloud deployment. 
 
 This Tri-Modal system is part of a broader mission to leverage transparent, multi-modal AI in the medical field, moving beyond standard computer vision to build tools that truly assist clinicians in complex decision-making.
 
-* **GitHub:** [aryanvaghsiya11-a11y](https://github.com/aryanvaghsiya11-a11y)
-* **LinkedIn:** [Connect with me](https://www.linkedin.com/in/aryan-vaghasiya/)
+* **LinkedIn:** [Connect with me](www.linkedin.com/in/aryan-vaghasiya-68a3b01b6)
