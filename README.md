@@ -68,19 +68,6 @@ The Next.js frontend securely communicates with a standalone, high-performance b
 
 ---
 ## 📊 Clinical Metrics & Model Performance
-The ensemble model was rigorously tested to prioritize diagnostic safety (maximizing True Positives while minimizing False Negatives). Below are the evaluation metrics derived from the validation threshold testing:
-
-| Metric | Score | Clinical Significance |
-| :--- | :--- | :--- |
-| **Sensitivity (Recall)** | `[XX.X%]` | Ability to correctly identify true positive infiltration cases. |
-| **Specificity** | `[XX.X%]` | Ability to correctly identify healthy (normal) scans. |
-| **False Positive Rate (FPR)**| `[XX.X%]` | Percentage of healthy patients incorrectly flagged. |
-| **ROC-AUC** | `[0.XX]` | Overall diagnostic capability of the Meta-Learner. |
-
-*(Validation matrix: TP: `[XX]` | TN: `[XX]` | FP: `[XX]` | FN: `[XX]`)*
-
---
-## 📊 Clinical Metrics & Model Performance
 The ensemble model was rigorously tested to prioritize diagnostic safety (maximizing True Positives while minimizing False Negatives). Below are the evaluation metrics derived from the validation threshold testing (Meta-Learner at Optimal Youden's J Threshold = 0.374):
 
 | Metric | Score | Clinical Significance |
