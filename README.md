@@ -13,7 +13,7 @@
 Experience the interactive dashboard and UI architecture here: **[vanlucentx.vercel.app](https://vanlucentx.vercel.app/)**
 
 ---
-
+![image](https://github.com/aryanvaghsiya11-a11y/VanLucentX/blob/50351978add13e9cd32ce971c3b2e35d1f8b672f/VanLucentX.png)
 ## 📖 About the Project: The Clinical Challenge
 Detecting pulmonary infiltration from standard radiography is historically challenging due to overlapping tissue structures and subtle opacities. Traditional medical AI models attempt to solve this by operating in a vacuum—analyzing a single isolated X-ray image while ignoring the broader clinical picture of the patient. 
 
